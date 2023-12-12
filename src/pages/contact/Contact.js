@@ -54,38 +54,6 @@ export const Contact = () => {
           setStatusError(err.text);
         }
       );
-
-    // try {
-    //   setSending(true);
-
-    //   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/message`, {
-    //     method: 'POST',
-    //     mode: 'cors',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //       email: email.value,
-    //       message: message.value,
-    //     }),
-    //   });
-
-    //   const responseMessage = await response.json();
-
-    //   const statusError = getStatusError({
-    //     status: response?.status,
-    //     errorMessage: responseMessage?.error,
-    //     fallback: 'There was a problem sending your message',
-    //   });
-
-    //   if (statusError) throw new Error(statusError);
-
-    //   setComplete(true);
-    //   setSending(false);
-    // } catch (error) {
-    //   setSending(false);
-    //   setStatusError(error.message);
-    // }
   };
 
   return (
@@ -205,25 +173,6 @@ export const Contact = () => {
     </Section>
   );
 };
-
-function getStatusError({
-  status,
-  errorMessage,
-  fallback = 'There was a problem with your request',
-}) {
-  if (status === 200) return false;
-
-  const statuses = {
-    500: 'There was a problem with the server, try again later',
-    404: 'There was a problem connecting to the server. Make sure you are connected to the internet',
-  };
-
-  if (errorMessage) {
-    return errorMessage;
-  }
-
-  return statuses[status] || fallback;
-}
 
 function getDelay(delayMs, offset = numToMs(0), multiplier = 1) {
   const numDelay = msToNum(delayMs) * multiplier;

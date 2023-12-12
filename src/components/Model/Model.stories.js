@@ -10,7 +10,6 @@ import laptopTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder
 import { Model } from 'components/Model/Model';
 import { StoryContainer } from '../../../.storybook/StoryContainer';
 import { deviceModels } from './deviceModels';
-import { Color } from 'three';
 
 export default {
   title: 'Model',
