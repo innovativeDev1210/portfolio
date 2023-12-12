@@ -1,4 +1,3 @@
-import projectKatakana from 'assets/katakana-project.svg?url';
 import { Button } from 'components/Button';
 import { Divider } from 'components/Divider';
 import { Heading } from 'components/Heading';
@@ -12,8 +11,6 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { cssProps, media } from 'utils/style';
 import styles from './ProjectSummary.module.css';
-import { Color } from 'three';
-import { BlurShaderUtils } from 'three-stdlib';
 
 const Model = dynamic(() => import('components/Model').then(mod => mod.Model));
 
